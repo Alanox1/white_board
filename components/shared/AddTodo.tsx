@@ -5,7 +5,7 @@ import { create } from "@/app/actions/todoActions";
 
 const AddTodo = () => {
   return (
-    <Form action={create} className="w=1/2 m-auto">
+    <Form action={create} className="w-1/2 m-auto">
       <div className=" flex">
         <Input name="input" type="text" placeholder="Add Todo..." />
         <Button type="submit" text="Add" />
