@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/utils/prisma";
 import { title } from "process";
+import { Stringifier } from "postcss";
 
 export async function create(formData: FormData) {
   const input = formData.get("input") as string;
@@ -40,4 +41,19 @@ export async function changeStatus(formData: FormData) {
   revalidatePath("/");
 
   return updatedStatus;
+}
+
+export async function edit(formData: FormData) {
+  const input = formData.get("newTitle") as string;
+  const inputId = formData.get(" inputId") as string;
+
+  await prisma.todo.update({
+    where: {
+      id: inputId,
+    },
+    data: {
+      title: input,
+    },
+  });
+  revalidatePath("/");
 }
