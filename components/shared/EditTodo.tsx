@@ -6,9 +6,13 @@ import Button from "../ui/Button";
 import { useState } from "react";
 import { todoType } from "@/types/todoType";
 import { BiEdit } from "react-icons/bi";
-const EditTodo = ({ todo }) => {
+
+const EditTodo = ({ todo }: {todo : todoType}) => {
   const [EditTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
+    if(todo.isCompleted === true) {
+      return
+    }
     setEditTodo(!EditTodo);
   };
 
@@ -24,6 +28,7 @@ const EditTodo = ({ todo }) => {
           <Input name="inputId" value={todo.id} type="hidden" />
           <div className="flex justify-center">
             <Input type="text" name="newTitle" placeholder="EditTodo..." />
+            <Button type="submit" text="Save" />
           </div>
         </Form>
       ) : null}

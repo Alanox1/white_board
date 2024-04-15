@@ -5,7 +5,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { changeStatus } from "@/app/actions/todoActions";
 import { todoType } from "@/types/todoType";
 
-const ChangeTodo = ({ todo }: todoType) => {
+const ChangeTodo = ({ todo }: {todo : todoType}) => {
   return (
     <Form action={changeStatus}>
       <Input name="inputId" value={todo.id} type="hidden" />
