@@ -1,15 +1,16 @@
 import AddTodo from "@/components/shared/AddTodo";
-import { prisma } from "@/utils/prisma"
+import { prisma } from "@/utils/prisma";
 import Todo from "@/components/shared/Todo";
+
 async function getData() {
   const data = await prisma.todo.findMany({
-    select : {
-      title : true,
-      id : true,
-      isCompleted : true
+    select: {
+      title: true,
+      id: true,
+      isCompleted: true,
     },
     orderBy: {
-      createdAt : "desc"
+      createdAt: "desc",
     },
   });
 
@@ -27,9 +28,9 @@ const Home = async () => {
       <div className="flex justify-center items-center flex-col w-[1000px]">
         <AddTodo />
         <div className="flex flex-col gap-5 items-center justify-center mt-10 w-full">
-          {data.map((todo,id) => (
+          {data.map((todo, id) => (
             <div className="w-full" key={id}>
-                 <Todo todo={todo} />
+              <Todo todo={todo} />
             </div>
           ))}
         </div>
