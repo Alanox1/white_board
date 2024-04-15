@@ -29,7 +29,7 @@ const Home = async () => {
         <div className="flex flex-col gap-5 items-center justify-center mt-10 w-full">
           {data.map((todo,id) => (
             <div className="w-full" key={id}>
-                 <Todo />
+                 <Todo todo={todo} />
             </div>
           ))}
         </div>
