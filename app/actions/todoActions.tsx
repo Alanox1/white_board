@@ -19,3 +19,20 @@ export async function create(formData: FormData) {
 
   revalidatePath("/");
 }
+
+export async function changeStatus(formData: FormData) {
+  const inputId = formData.get("inputId") as string;
+  const todo = await prisma.todo.findUnique({ where: { id: inputId } });
+
+  const updatedStatus = !todo?.isCompleted;
+
+  await prisma.todo.update({
+    where: {
+      id: inputId,
+    },
+    data: {
+      isCompleted: updatedStatus,
+    },
+  });
+  revalidatePath("/");
+}
