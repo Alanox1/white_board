@@ -12,7 +12,6 @@ export async function create(formData: FormData) {
       title: input,
     },
   });
+
+  revalidatePath("/")
 }
-
-
-//Probando subir los cambios
