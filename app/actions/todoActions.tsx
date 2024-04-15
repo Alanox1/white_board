@@ -24,8 +24,11 @@ export async function changeStatus(formData: FormData) {
   const inputId = formData.get("inputId") as string;
   const todo = await prisma.todo.findUnique({ where: { id: inputId } });
 
-  const updatedStatus = !todo?.isCompleted;
+  if (!todo) {
+    return;
+  }
 
+  const updatedStatus = !todo?.isCompleted;
   await prisma.todo.update({
     where: {
       id: inputId,
@@ -35,4 +38,6 @@ export async function changeStatus(formData: FormData) {
     },
   });
   revalidatePath("/");
+
+  return updatedStatus;
 }
