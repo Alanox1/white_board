@@ -8,7 +8,7 @@ const Todo = ({ todo }: { todo: todoType }) => {
     opacity: todo.isCompleted === true ? 0.5 : 1,
   };
   return (
-    <div className="w-full  flex flex-col" style={todoStyle}>
+    <div className="flex flex-col items-center" style={todoStyle}>
       <div
         className="p-6 bg-white min-w-80 w-80 h-80 flex flex-col justify-around"
         style={todoStyle}

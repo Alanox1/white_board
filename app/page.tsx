@@ -29,11 +29,9 @@ const Home = async () => {
       <div className="flex justify-center items-center flex-col w-full p-20">
         <AddTodo />
 
-        <div className="grid grid-cols-3 gap-10 items-center  justify-center mt-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 m-auto  mt-10 w-full">
           {data.map((todo, id) => (
-            <div className="w-full" key={id}>
-              <Todo todo={todo} />
-            </div>
+            <Todo todo={todo} key={id} />
           ))}
         </div>
       </div>
