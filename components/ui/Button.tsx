@@ -18,7 +18,7 @@ const Button = ({ type, text, onClick, actionButton }: buttonProps) => {
         type={type}
         className={clsx(
           actionButton && "bg-orange-700 rounded-full p-2 text-white",
-          "bg-orange-700 px-2 text-white"
+          "bg-pink-700 px-6 py-6 text-white"
         )}
       >
         {text}
