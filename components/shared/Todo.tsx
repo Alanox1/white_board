@@ -9,17 +9,19 @@ const Todo = ({ todo }: { todo: todoType }) => {
   };
   return (
     <div
-      className="w-full flex flex-col items-center justify-between bg-white py-20 px-20  "
+      className="w-full flex flex-col p-6  bg-white  gap-20 "
       style={todoStyle}
     >
-      <ChangeTodo todo={todo} />
+      <div className="flex justify-center">
+        <ChangeTodo todo={todo} />
+      </div>
       <span className="text-center ">
         <h1 className="font-bold uppercase">{todo.title}</h1>
-        <span className=" font">In publishing and graphic design</span>
-        <div className="flex justify-end gap-5">
-          <EditTodo todo={todo} />
-        </div>
+        In publishing and graphic design
       </span>
+      <div className="flex justify-end gap-5">
+        <EditTodo todo={todo} />
+      </div>
     </div>
   );
 };
