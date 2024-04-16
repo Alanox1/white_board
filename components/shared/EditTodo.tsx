@@ -1,4 +1,5 @@
 "use client";
+
 import { edit } from "@/app/actions/todoActions";
 import Form from "../ui/Form";
 import Input from "../ui/Input";
@@ -7,14 +8,15 @@ import { useState } from "react";
 import { todoType } from "@/types/todoType";
 import { BiEdit } from "react-icons/bi";
 import DeleteTodo from "./DeleteTodo";
+import CustomModal from "./Modal";
 
 const EditTodo = ({ todo }: { todo: todoType }) => {
-  const [EditTodo, setEditTodo] = useState(false);
+  const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
     if (todo.isCompleted === true) {
       return;
     }
-    setEditTodo(!EditTodo);
+    setEditTodo(!editTodo);
   };
 
   const handleSubmit = () => {
@@ -23,8 +25,8 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
   return (
     <div className=" flex gap-5 items-center">
       <Button onClick={hadleEdit} text={<BiEdit />} actionButton />
-
-      {EditTodo ? (
+      <CustomModal isOpen={editTodo} closeModal={handleSubmit} />
+      {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
           <Input name="inputId" value={todo.id} type="hidden" />
           <div className="flex justify-center">
