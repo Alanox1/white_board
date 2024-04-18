@@ -23,11 +23,13 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
     setEditTodo(false);
   };
   return (
-    <div className=" flex gap-5 items-center">
+    <div className="flex gap-5 items-center">
+      
       <Button onClick={hadleEdit} text={<BiEdit />} actionButton />
       <CustomModal isOpen={editTodo} closeModal={handleSubmit} />
       {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
+           
           <Input name="inputId" value={todo.id} type="hidden" />
           <div className="flex justify-center">
             <Input type="text" name="newTitle" placeholder="EditTodo..." />

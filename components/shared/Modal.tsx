@@ -35,17 +35,28 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
           left: "25%",
           bottom: "auto",
           rigth: "auto",
+          display : "flex", //Puse un flex para poder acomodarlos y abajo como los acomode
+          flexDirection : "column",
+          justifyContent : "space-evenly"
         },
       }}
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
+      <h2 className="text-5xl text-center">Editar</h2> {/* Le puse un titulo de editar */}
       <h2>Ejemplo de Modal</h2>
-      <p>Ingresa algo:</p>
-      <input type="text" value={modalText} onChange={handleInputChange} />
-      <button onClick={handleSave}>Guardar</button>
-      <button onClick={closeModal}>Cerrar</button>
+      <div>
+      {/* <p className="text-xl">Ingresa algo:</p> */}
+      <p className="text-xl">Editar con lo que quieras:</p> 
+      <input type="text" value={modalText} onChange={handleInputChange} className="p-2 mt-3" />
+      </div>
+      
+      <div className="flex gap-5 "> {/* PUSE UN DIV */}
+        <button className="w-full bg-red-600 py-2 text-white" onClick={handleSave}>Guardar</button>
+        <button className="w-full bg-red-600 text-white" onClick={closeModal}>Cerrar</button>
+      </div>
+    
     </Modal>
   );
 };

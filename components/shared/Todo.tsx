@@ -17,10 +17,10 @@ const Todo = ({ todo }: { todo: todoType }) => {
           <ChangeTodo todo={todo} />
         </div>
         <span className="text-center ">
-          <h1 className="font-bold uppercase">{todo.title}</h1>
+          <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
           In publishing and graphic design
         </span>
-        <div className="flex justify-end gap-5">
+        <div className="flex justify-end gap-5 text-xl">
           <EditTodo todo={todo} />
         </div>
       </div>
