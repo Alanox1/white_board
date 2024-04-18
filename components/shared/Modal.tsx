@@ -27,7 +27,15 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
   return (
     <Modal
       style={{
-        content: { backgroundColor: "gray", width: "50%", height: "50%" },
+        content: {
+          backgroundColor: "gray",
+          width: "50%",
+          height: "50%",
+          top: "25%",
+          left: "25%",
+          bottom: "auto",
+          rigth: "auto",
+        },
       }}
       isOpen={isOpen}
       onRequestClose={closeModal}
