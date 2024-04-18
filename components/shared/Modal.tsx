@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { MdHeight } from "react-icons/md";
 import Modal from "react-modal";
 
 // Establecemos la aplicación Modal en el elemento #root del DOM.
@@ -25,6 +26,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
 
   return (
     <Modal
+      style={{
+        content: { backgroundColor: "gray", width: "50%", height: "50%" },
+      }}
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
