@@ -25,7 +25,7 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
   return (
     <div className="flex gap-5 items-center">
       <Button onClick={hadleEdit} text={<BiEdit />} actionButton />
-      <CustomModal isOpen={editTodo} closeModal={handleSubmit} todo={todo} />
+      <CustomModal isOpen={editTodo} closeModal={handleSubmit} todo={todo}  />
       {/* {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
            

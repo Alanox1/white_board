@@ -1,7 +1,10 @@
+"use client"
 import ChangeTodo from "./ChangeTodo";
 import { todoType } from "@/types/todoType";
 import EditTodo from "./EditTodo";
+import { useState } from "react";
 const Todo = ({ todo }: { todo: todoType }) => {
+  const [ backgroundColor, setBackgroundColor ] = useState("")
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
     opacity: todo.isCompleted === true ? 0.5 : 1,
@@ -20,7 +23,7 @@ const Todo = ({ todo }: { todo: todoType }) => {
           In publishing and graphic design
         </span>
         <div className="flex justify-end gap-5 text-xl">
-          <EditTodo todo={todo} />
+          <EditTodo todo={todo}  />
         </div>
       </div>
     </div>

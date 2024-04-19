@@ -28,7 +28,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     setEditTodo(!editTodo);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     setEditTodo(false);
     closeModal() //Agregue este closeModal para que al editar al apretar save se vaya el modal
   };
@@ -46,7 +46,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     <Modal
       style={{
         content: {
-          backgroundColor: "gray",
+          backgroundColor: "#D3D3D3",
           width: "50%",
           height: "50%",
           top: "25%",
@@ -68,8 +68,8 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         <div className="flex justify-center gap-6">
           <Input type="text" name="newTitle" placeholder="EditTodo..." />
           <Button type="submit" text="Save"  />
-        </div>
-       
+        </div>    
+        
       </Form>
       {/* <DeleteTodo todo={todo} onDelete= {closeModal}  /> */}
       
@@ -96,7 +96,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         {" "}
         {/* PUSE UN DIV */}
         <button
-          className="w-full bg-red-600 py-2 text-white"
+          className="w-full bg-green-700 py-2 text-white"
           onClick={handleSave}
         >
           Guardar
