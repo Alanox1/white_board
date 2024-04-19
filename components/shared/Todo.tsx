@@ -1,8 +1,6 @@
 import ChangeTodo from "./ChangeTodo";
 import { todoType } from "@/types/todoType";
 import EditTodo from "./EditTodo";
-import DeleteTodo from "./DeleteTodo";
-import CustomModal from "./Modal";
 const Todo = ({ todo }: { todo: todoType }) => {
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
@@ -22,9 +20,7 @@ const Todo = ({ todo }: { todo: todoType }) => {
           In publishing and graphic design
         </span>
         <div className="flex justify-end gap-5 text-xl">
-       
-            <EditTodo todo={todo} />
-         
+          <EditTodo todo={todo} />
         </div>
       </div>
     </div>

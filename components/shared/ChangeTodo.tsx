@@ -8,12 +8,11 @@ import { todoType } from "@/types/todoType";
 const ChangeTodo = ({ todo }: { todo: todoType }) => {
   return (
     <Form action={changeStatus}>
-      
       <Input name="inputId" value={todo.id} type="hidden" />
       <Button
         actionButton
         type="submit"
-        
+
         // text={<AiOutlineCheckCircle />}
       />
     </Form>

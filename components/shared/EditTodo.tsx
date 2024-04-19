@@ -24,10 +24,9 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
   };
   return (
     <div className="flex gap-5 items-center">
-      
       <Button onClick={hadleEdit} text={<BiEdit />} actionButton />
-      <CustomModal isOpen={editTodo} closeModal={handleSubmit} />
-      {editTodo ? (
+      <CustomModal isOpen={editTodo} closeModal={handleSubmit} todo={todo} />
+      {/* {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
            
           <Input name="inputId" value={todo.id} type="hidden" />
@@ -37,7 +36,7 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
           </div>
           <DeleteTodo todo={todo} />
         </Form>
-      ) : null}
+      ) : null} */}
     </div>
   );
 };
