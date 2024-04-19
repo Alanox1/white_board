@@ -28,7 +28,7 @@ const Home = async () => {
 
 
       <div className="flex gap-6">
-          <h1 className="text-6xl p-0 m-0">WhiteBoard</h1>
+          <h1 className="text-6xl p-0 m-0">NoteBoard</h1>
           <AddTodo />
       </div>
       
