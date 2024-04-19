@@ -30,6 +30,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
 
   const handleSubmit = () => {
     setEditTodo(false);
+    closeModal() //Agregue este closeModal para que al editar al apretar save se vaya el modal
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setModalText(e.target.value);
@@ -61,20 +62,25 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
+      <h2 className="text-5xl text-center">Editar</h2>{" "}
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-6">
           <Input type="text" name="newTitle" placeholder="EditTodo..." />
-          <Button type="submit" text="Save" />
+          <Button type="submit" text="Save"  />
         </div>
        
       </Form>
-      <DeleteTodo todo={todo} onDelete= {closeModal}  />
-      <h2 className="text-5xl text-center">Editar</h2>{" "}
-      {/* Le puse un titulo de editar */}
+      {/* <DeleteTodo todo={todo} onDelete= {closeModal}  /> */}
+      
+    
+
+
+
+{/*        
       <h2>Ejemplo de Modal</h2>
       <div>
-        {/* <p className="text-xl">Ingresa algo:</p> */}
+       <p className="text-xl">Ingresa algo:</p> 
         <p className="text-xl">Editar con lo que quieras:</p>
         <input
           type="text"
@@ -83,6 +89,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           className="p-2 mt-3"
         />
       </div>
+
+*/}
+
       <div className="flex gap-5 ">
         {" "}
         {/* PUSE UN DIV */}
@@ -96,8 +105,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           Cerrar
           
         </button>
+        <DeleteTodo todo={todo} onDelete= {closeModal}  />  {/* Este botón antes estaba mas arriba */}
       </div>
-      {/*    Esto es el modal, el boton de eliminar no sale porque esta en otro lado, esta en EditTodo */}
+     
     </Modal>
   );
 };
