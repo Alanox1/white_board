@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { MdHeight } from "react-icons/md";
 import Modal from "react-modal";
+import DeleteTodo from "./DeleteTodo";
+
 
 // Establecemos la aplicación Modal en el elemento #root del DOM.
 Modal.setAppElement("body");
@@ -56,7 +58,11 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
         <button className="w-full bg-red-600 py-2 text-white" onClick={handleSave}>Guardar</button>
         <button className="w-full bg-red-600 text-white" onClick={closeModal}>Cerrar</button>
       </div>
+     
     
+
+
+  {/*    Esto es el modal, el boton de eliminar no sale porque esta en otro lado, esta en EditTodo */}
     </Modal>
   );
 };
