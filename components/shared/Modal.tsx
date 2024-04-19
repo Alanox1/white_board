@@ -67,8 +67,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           <Input type="text" name="newTitle" placeholder="EditTodo..." />
           <Button type="submit" text="Save" />
         </div>
+       
       </Form>
-      <DeleteTodo todo={todo} />
+      <DeleteTodo todo={todo} onDelete= {closeModal}  />
       <h2 className="text-5xl text-center">Editar</h2>{" "}
       {/* Le puse un titulo de editar */}
       <h2>Ejemplo de Modal</h2>
@@ -93,6 +94,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         </button>
         <button className="w-full bg-red-600 text-white" onClick={closeModal}>
           Cerrar
+          
         </button>
       </div>
       {/*    Esto es el modal, el boton de eliminar no sale porque esta en otro lado, esta en EditTodo */}

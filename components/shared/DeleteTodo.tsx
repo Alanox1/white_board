@@ -7,12 +7,13 @@ import Input from "../ui/Input";
 import { todoType } from "@/types/todoType";
 import { BsFillTrashFill } from "react-icons/bs";
 
-const DeleteTodo = ({ todo }: { todo: todoType }) => {
+const DeleteTodo = ({ todo , onDelete}: { todo: todoType }) => {
+
   return (
-    <Form action={deleteTodo}>
+     <Form action={deleteTodo} onSubmit={() => onDelete()}>
       <Input type="hidden" name="inputId" value={todo.id} />
 
-      <Button actionButton text={<BsFillTrashFill />} type="submit" />
+      <Button actionButton text={<BsFillTrashFill />} type="submit"  />
     </Form>
   );
 };
