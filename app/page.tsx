@@ -2,6 +2,7 @@ import AddTodo from "@/components/shared/AddTodo";
 import { prisma } from "@/utils/prisma";
 import Todo from "@/components/shared/Todo";
 import TodoBoard from "@/components/shared/TodoBoard";
+import { todo } from "node:test";
 
 async function getData() {
   const data = await prisma.todo.findMany({
@@ -15,7 +16,10 @@ async function getData() {
     },
   });
 
-  return data;
+  return data.map((todo) => {
+    // TODO: Cambiar cuando se actualize la base de datos!!!!
+    return { ...todo, color: "red" };
+  });
 }
 const Home = async () => {
   const data = await getData();
@@ -26,12 +30,11 @@ const Home = async () => {
         Next.js 14 <span className="text-orange-700 ml-2">Server Actions</span>
       </h1> */}
 
-
       <div className="flex gap-6">
-          <h1 className="text-6xl p-0 m-0">NoteBoard</h1>
-          <AddTodo />
+        <h1 className="text-6xl p-0 m-0">NoteBoard</h1>
+        <AddTodo />
       </div>
-      
+
       <div className="flex justify-center items-center flex-col w-full p-20">
         {/* <AddTodo /> */}
 

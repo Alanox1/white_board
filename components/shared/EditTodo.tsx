@@ -5,12 +5,12 @@ import Form from "../ui/Form";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useState } from "react";
-import { todoType } from "@/types/todoType";
+import { TodoType } from "@/types/todoType";
 import { BiEdit } from "react-icons/bi";
 import DeleteTodo from "./DeleteTodo";
 import CustomModal from "./Modal";
 
-const EditTodo = ({ todo }: { todo: todoType }) => {
+const EditTodo = ({ todo }: { todo: TodoType }) => {
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
     if (todo.isCompleted === true) {
@@ -25,7 +25,7 @@ const EditTodo = ({ todo }: { todo: todoType }) => {
   return (
     <div className="flex gap-5 items-center">
       <Button onClick={hadleEdit} text={<BiEdit />} actionButton />
-      <CustomModal isOpen={editTodo} closeModal={handleSubmit} todo={todo}  />
+      <CustomModal isOpen={editTodo} closeModal={handleSubmit} todo={todo} />
       {/* {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
            

@@ -7,7 +7,7 @@ import DeleteTodo from "./DeleteTodo";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { edit } from "@/app/actions/todoActions";
-import { todoType } from "@/types/todoType";
+import { TodoType } from "@/types/todoType";
 
 // Establecemos la aplicación Modal en el elemento #root del DOM.
 Modal.setAppElement("body");
@@ -15,10 +15,10 @@ Modal.setAppElement("body");
 type ModalProps = {
   isOpen: boolean;
   closeModal: () => void;
-  todo: todoType;
+  todo: TodoType;
 };
 
-const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo}) => {
+const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
   const [modalText, setModalText] = useState("");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
@@ -30,7 +30,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo}) => {
 
   const handleSubmit = (e) => {
     setEditTodo(false);
-    closeModal() //Agregue este closeModal para que al editar al apretar save se vaya el modal
+    closeModal(); //Agregue este closeModal para que al editar al apretar save se vaya el modal
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setModalText(e.target.value);
@@ -65,64 +65,33 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo}) => {
       <h2 className="text-5xl text-center">Editar</h2>{" "}
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
-        <div className="flex justify-center gap-6">
-          
-          <Input type="text" name="newTitle" placeholder="EditTodo..."  />
-          <Button type="submit" text="Save"  />
-        </div>    
-        
+        <div className="flex flex-col justify-center gap-6 ">
+          <Input type="text" name="newTitle" placeholder="EditTodo..." />
+          <div className="flex justify-center gap-10">
+            {" "}
+            <label>
+              <input type="radio" name="backgroundColor" value="blue" />
+              Azul
+            </label>
+            <label>
+              <input type="radio" name="backgroundColor" value="yellow" />
+              Amarillo
+            </label>
+            <label>
+              <input type="radio" name="backgroundColor" value="yellow" />
+              Green
+            </label>
+          </div>
+          <Button type="submit" text="Save" />
+        </div>
 
-    {/* Inputs para cambiar los colores */}
-        <label>
-          <input type="radio" name="backgroundColor" value="blue" />
-          Azul
-        </label>
-        <label>
-          <input type="radio" name="backgroundColor" value="yellow" />
-         Amarillo
-        </label>
-
-
-
-
+        {/* Inputs para cambiar los colores */}
       </Form>
-      
-      
-    
-
-
-
-{/*        
-      <h2>Ejemplo de Modal</h2>
-      <div>
-       <p className="text-xl">Ingresa algo:</p> 
-        <p className="text-xl">Editar con lo que quieras:</p>
-        <input
-          type="text"
-          value={modalText}
-          onChange={handleInputChange}
-          className="p-2 mt-3"
-        />
-      </div>
-
-*/}
-
-      <div className="flex gap-5 ">
+      <div className="flex gap-5 justify-center ">
         {" "}
-       
-        <button
-          className="w-full bg-green-700 py-2 text-white"
-          onClick={handleSave}
-        >
-          Guardar
-        </button>
-        <button className="w-full bg-red-600 text-white" onClick={closeModal}>
-          Cerrar
-          
-        </button>
-        <DeleteTodo todo={todo} onDelete= {closeModal}  />  {/* Este botón antes estaba mas arriba */}
+        <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
+        {/* Este botón antes estaba mas arriba */}
       </div>
-     
     </Modal>
   );
 };
