@@ -11,7 +11,6 @@ const Todo = ({ todo }: { todo: TodoType }) => {
     opacity: todo.isCompleted === true ? 0.5 : 1,
     // backgroundColor : backgroundColor ? backgroundColor : "white" //Aca se le pone el color
   };
-  console.log(todo.color);
   return (
     <div className="flex flex-col items-center" style={todoStyle}>
       <div
@@ -24,7 +23,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         ></div>
         <span className="text-center ">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
-          In publishing and graphic design
+          <p className="">In publishing and graphic design{todo.messaje}</p>
         </span>
         <div className="flex justify-end gap-5 text-xl">
           <EditTodo todo={todo} />
