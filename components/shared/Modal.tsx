@@ -18,7 +18,7 @@ type ModalProps = {
   todo: todoType;
 };
 
-const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
+const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo}) => {
   const [modalText, setModalText] = useState("");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
@@ -66,12 +66,27 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
         <div className="flex justify-center gap-6">
-          <Input type="text" name="newTitle" placeholder="EditTodo..." />
+          
+          <Input type="text" name="newTitle" placeholder="EditTodo..."  />
           <Button type="submit" text="Save"  />
         </div>    
         
+
+    {/* Inputs para cambiar los colores */}
+        <label>
+          <input type="radio" name="backgroundColor" value="blue" />
+          Azul
+        </label>
+        <label>
+          <input type="radio" name="backgroundColor" value="yellow" />
+         Amarillo
+        </label>
+
+
+
+
       </Form>
-      {/* <DeleteTodo todo={todo} onDelete= {closeModal}  /> */}
+      
       
     
 
@@ -94,7 +109,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
 
       <div className="flex gap-5 ">
         {" "}
-        {/* PUSE UN DIV */}
+       
         <button
           className="w-full bg-green-700 py-2 text-white"
           onClick={handleSave}

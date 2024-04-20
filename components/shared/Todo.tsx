@@ -4,11 +4,14 @@ import { todoType } from "@/types/todoType";
 import EditTodo from "./EditTodo";
 import { useState } from "react";
 const Todo = ({ todo }: { todo: todoType }) => {
-  const [ backgroundColor, setBackgroundColor ] = useState("")
+   const [ backgroundColor, setBackgroundColor ] = useState("") //  Este es el useState de los colores
+
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
     opacity: todo.isCompleted === true ? 0.5 : 1,
+    // backgroundColor : backgroundColor ? backgroundColor : "white" //Aca se le pone el color
   };
+
   return (
     <div className="flex flex-col items-center" style={todoStyle}>
       <div
@@ -23,7 +26,7 @@ const Todo = ({ todo }: { todo: todoType }) => {
           In publishing and graphic design
         </span>
         <div className="flex justify-end gap-5 text-xl">
-          <EditTodo todo={todo}  />
+           <EditTodo todo={todo} /> 
         </div>
       </div>
     </div>
