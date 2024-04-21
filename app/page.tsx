@@ -1,8 +1,15 @@
+
 import AddTodo from "@/components/shared/AddTodo";
 import { prisma } from "@/utils/prisma";
 import Todo from "@/components/shared/Todo";
 import TodoBoard from "@/components/shared/TodoBoard";
 import { todo } from "node:test";
+
+// import component para el drawer 👇
+import Drawer from 'react-modern-drawer'
+import { useState, useEffect } from "react";
+import SideBar from "@/components/shared/SideBar";
+
 
 async function getData() {
   const data = await prisma.todo.findMany({
@@ -21,18 +28,18 @@ async function getData() {
     return { ...todo, color: "red" };
   });
 }
+
 const Home = async () => {
-  const data = await getData();
+  
+ const data = await getData();
+ 
   return (
     <div className="w-full py-32 flex justify-center flex-col items-center">
-      {/* <span className="text-3xl font-extrabold uppercase">To-do-app</span>
-      <h1 className="text-3xl font-extrabold uppercase mb-5">
-        Next.js 14 <span className="text-orange-700 ml-2">Server Actions</span>
-      </h1> */}
 
       <div className="flex gap-6">
         <h1 className="text-6xl p-0 m-0">NoteBoard</h1>
-        <AddTodo />
+        {/* <AddTodo />  */}
+        <SideBar />
       </div>
 
       <div className="flex justify-center items-center flex-col w-full p-20">
@@ -42,7 +49,7 @@ const Home = async () => {
           {data.map((todo, id) => (
             <Todo todo={todo} key={id} />
           ))}
-        </div>
+        </div> 
       </div>
     </div>
   );
