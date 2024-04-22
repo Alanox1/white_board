@@ -4,9 +4,6 @@ import { prisma } from "@/utils/prisma";
 import Todo from "@/components/shared/Todo";
 import TodoBoard from "@/components/shared/TodoBoard";
 import { todo } from "node:test";
-
-// import component para el drawer 👇
-import Drawer from 'react-modern-drawer'
 import { useState, useEffect } from "react";
 import SideBar from "@/components/shared/SideBar";
 
