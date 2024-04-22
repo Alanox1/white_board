@@ -48,7 +48,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         content: {
           backgroundColor: "#D3D3D3",
           width: "50%",
-          height: "50%",
+          height: "auto", //Le saque el height de 50% para que se anche a todo el contenido
           top: "25%",
           left: "25%",
           bottom: "auto",
@@ -62,7 +62,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
-      <h2 className="text-5xl text-center">Editar</h2>{" "}
+      <h2 className="text-5xl text-center mb-4">Editar</h2>{" "}
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
         <div className="flex flex-col justify-center gap-6 ">
@@ -82,14 +82,16 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
               Green
             </label>
           </div>
+      
           <Button type="submit" text="Save" />
         </div>
 
         {/* Inputs para cambiar los colores */}
       </Form>
-      <div className="flex gap-5 justify-center ">
+      <div className="flex gap-5 ">
         {" "}
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
+     
         {/* Este botón antes estaba mas arriba */}
       </div>
     </Modal>

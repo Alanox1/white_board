@@ -36,8 +36,8 @@ const Home = async () => {
   return (
     <div className="w-full py-32 flex justify-center flex-col items-center">
 
-      <div className="flex gap-6 justify-around w-full">
-        <h1 className="text-6xl p-0 m-0">NoteBoard</h1>
+      <div className="flex gap-6 justify-around w-full items-center">
+        <h1 className="text-3xl sm:text-6xl p-0 m-0">NoteBoard</h1>
         {/* <AddTodo />  */}
         <SideBar />
       </div>
