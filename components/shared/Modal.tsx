@@ -65,8 +65,14 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       <h2 className="text-5xl text-center mb-4">Editar</h2>{" "}
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
+        
         <div className="flex flex-col justify-center gap-6 ">
           <Input type="text" name="newTitle" placeholder="EditTodo..." />
+
+
+          <Input name="messageEdit" type="text" placeholder="Edit Message..." />
+
+
           <div className="flex justify-center gap-10">
             {" "}
             <label>
