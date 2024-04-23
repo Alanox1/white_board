@@ -5,4 +5,5 @@ export type TodoType = {
   isCompleted: boolean;
   createdAt?: Date;
   color: string;
+  mensaje : string;
 };

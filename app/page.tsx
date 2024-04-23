@@ -14,11 +14,13 @@ async function getData() {
     select: {
       title: true,
       id: true,
+      mensaje: true,
       isCompleted: true,
+     
     },
     orderBy: {
       createdAt: "desc",
-    },
+    }
   });
 
   return data.map((todo) => {

@@ -17,6 +17,7 @@ export async function create(formData: FormData) {
   await prisma.todo.create({
     data: {
       title: input,
+      mensaje : message
     },
   });
 
