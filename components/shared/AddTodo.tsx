@@ -13,8 +13,7 @@ const AddTodo = ({changeOpen}) => {
         <Input name="input" type="text" placeholder="Add Todo..." />
         
 
-        <Input name="message" type="text" placeholder="Add Message..."/>  {/*  Input para agregar un mensaje, todavia no anda */}
-
+        <Input name="message" type="text" placeholder="Add Message..."/>  {/*  Input para agregar un mensaje, anda pero sale subrayado en rojo en page.tsx y en todoActions.tsx */}
 
         <Button type="submit" text="Add"  />
       </div>

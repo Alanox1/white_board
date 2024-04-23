@@ -16,7 +16,6 @@ async function getData() {
       id: true,
       mensaje: true,
       isCompleted: true,
-     
     },
     orderBy: {
       createdAt: "desc",
