@@ -9,6 +9,7 @@ import SideBar from "@/components/shared/SideBar";
 
 
 async function getData() {
+  
   const data = await prisma.todo.findMany({
     select: {
       title: true,

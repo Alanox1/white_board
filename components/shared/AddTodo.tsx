@@ -9,9 +9,14 @@ const AddTodo = ({changeOpen}) => {
   
   return (
     <Form action={create} className="w-1/2 m-auto" onSubmit={handleSubmit}>
-       <div className="flex flex-col gap-4 "> {/*Le puse flex-col para que queden uno debajo del otro */}
+       <div className="flex flex-col gap-4 ">
         <Input name="input" type="text" placeholder="Add Todo..." />
-        <Button type="submit" text="Add"  /> {/*Le puse onChange = false para que cierre */}
+        
+
+        <Input name="message" type="text" placeholder="Add Message..."/>  {/*  Input para agregar un mensaje, todavia no anda */}
+
+
+        <Button type="submit" text="Add"  />
       </div>
     </Form>
   );

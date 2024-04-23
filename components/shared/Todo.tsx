@@ -23,6 +23,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         ></div>
         <span className="text-center ">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
+        
           <p className="">In publishing and graphic design{todo.messaje}</p>
         </span>
         <div className="flex justify-end gap-5 text-xl">

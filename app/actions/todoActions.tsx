@@ -8,6 +8,8 @@ import { Stringifier } from "postcss";
 export async function create(formData: FormData) {
   const input = formData.get("input") as string;
 
+  const message = formData.get("message") as string; //Acá llega el message, pero no lo puedo poner en el prisma porque me sale error
+
   if (!input.trim()) {
     return;
   }
