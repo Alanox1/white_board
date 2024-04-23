@@ -10,7 +10,7 @@ datasource db {
 model Todo{
   id String @id @default(uuid()) @map("_id")
   title String?
+  mensaje String?
   isCompleted Boolean @default(false)
   createdAt DateTime @default(now())
-  mensaje String?
 }  

@@ -88,13 +88,14 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
               Green
             </label>
           </div>
-      
-          <Button type="submit" text="Save" />
+         
+         <Button type="submit" text="Save" />
+         
+          
         </div>
 
-        {/* Inputs para cambiar los colores */}
       </Form>
-      <div className="flex gap-5 ">
+      <div className="flex gap-5 mt-4">
         {" "}
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
      

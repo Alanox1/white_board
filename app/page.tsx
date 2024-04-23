@@ -16,6 +16,7 @@ async function getData() {
       id: true,
       mensaje: true,
       isCompleted: true,
+      
     },
     orderBy: {
       createdAt: "desc",
@@ -26,12 +27,13 @@ async function getData() {
     // TODO: Cambiar cuando se actualize la base de datos!!!!
     return { ...todo, color: "red" };
   });
+  
 }
 
 const Home = async () => {
   
  const data = await getData();
- 
+
   return (
     <div className="w-full py-32 flex justify-center flex-col items-center">
 

@@ -9,7 +9,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
     opacity: todo.isCompleted === true ? 0.5 : 1,
-    // backgroundColor : backgroundColor ? backgroundColor : "white" //Aca se le pone el color
+    // backgroundColor : todo.color 
   };
   return (
     <div className="flex flex-col items-center" style={todoStyle}>
@@ -26,7 +26,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
           <p>{todo.mensaje}</p>
           {/* <p className="">In publishing and graphic design{todo.messaje}</p> */}
         </span>
-        <div className="flex justify-end gap-5 text-xl">
+        <div className="flex justify-end gap-5 text-xl mt-10">
           <EditTodo todo={todo} />
         </div>
       </div>

@@ -9,7 +9,7 @@ export async function create(formData: FormData) {
   const input = formData.get("input") as string;
 
   const message = formData.get("message") as string; //Acá llega el message, pero no lo puedo poner en el prisma porque me sale error
-
+ 
   if (!input.trim()) {
     return;
   }
@@ -17,7 +17,7 @@ export async function create(formData: FormData) {
   await prisma.todo.create({
     data: {
       title: input,
-      mensaje : message
+      mensaje : message,
     },
   });
 
@@ -58,7 +58,8 @@ export async function edit(formData: FormData) {
     },
     data: {
       title: input,
-      mensaje : messageEdit
+      mensaje : messageEdit,
+  
     },
   });
   revalidatePath("/");

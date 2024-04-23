@@ -4,6 +4,5 @@ export type TodoType = {
   messaje?: string | null;
   isCompleted: boolean;
   createdAt?: Date;
-  color: string;
-  mensaje : string;
+  mensaje? : string | null
 };
