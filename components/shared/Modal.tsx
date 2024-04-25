@@ -93,18 +93,18 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
 
           <div className="flex justify-center gap-10 m-7">
             <label>
-              <span className="inline-block h-6 w-6 rounded-full bg-blue-500">
+              <span className="inline-block  h-10 w-10 rounded-full bg-blue-500">
                 <Input type="radio" name="backgroundColor" value="blue" />
               </span>{" "}
             </label>
             <label>
               {" "}
-              <span className="inline-block h-6 w-6 rounded-full bg-yellow-500">
+              <span className="inline-block h-10 w-10 rounded-full bg-yellow-500">
                 <Input type="radio" name="backgroundColor" value="yellow" />
               </span>{" "}
             </label>
             <label>
-              <span className="inline-block h-6 w-6 rounded-full bg-green-500">
+              <span className="inline-block  h-10 w-10 rounded-full bg-green-500">
                 <Input type="radio" name="backgroundColor" value="green" />
               </span>{" "}
             </label>
