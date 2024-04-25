@@ -20,7 +20,7 @@ type ModalProps = {
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
   const [modalTitle, setModalTitle] = useState(todo.title || "");
-  const [modalMessage, setModalMessage] = useState(todo.messaje || "");
+  const [modalMessage, setModalMessage] = useState(todo.mensaje || "");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
     if (todo.isCompleted === true) {
