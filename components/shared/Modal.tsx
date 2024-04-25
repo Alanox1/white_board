@@ -103,12 +103,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
             </label>
           </div>
 
-          <Button
-            type="submit"
-            text="Save"
-            actionButton
-            className="text-orange-600"
-          />
+          <Button type="submit" text="Save" variant="action" />
         </div>
       </Form>
       <div className="flex gap-5 mt-4">

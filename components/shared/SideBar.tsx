@@ -5,12 +5,12 @@ import AddTodo from "./AddTodo";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-accent rounded-3xl  p-5 top-0 left-0 right-0 shadow-md">
+    <div className="bg-accent/70 hover:bg-accent rounded-3xl  p-5 top-0 left-0 right-0 shadow-md">
       <button
         className="m-2 text-center text-2xl"
         onClick={() => setOpen(true)}
       >
-        Nueva nota
+        New note
       </button>
 
       <div
