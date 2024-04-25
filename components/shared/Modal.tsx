@@ -8,6 +8,7 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { edit } from "@/app/actions/todoActions";
 import { TodoType } from "@/types/todoType";
+import ColorSelector from "./ColorSelector";
 
 // Establecemos la aplicación Modal en el elemento #root del DOM.
 Modal.setAppElement("body");
@@ -92,7 +93,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           </div>
 
           <div className="flex justify-center gap-10 m-7">
-            <label>
+            {/* <label>
               <span className="inline-block h-10 w-10 rounded-full bg-blue-500 ">
                 <Input
                   type="radio"
@@ -121,7 +122,8 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
                   className="opacity-0 absolute"
                 />
               </span>{" "}
-            </label>
+            </label> */}
+            <ColorSelector />
           </div>
 
           <Button type="submit" text="Save" variant="save" />
