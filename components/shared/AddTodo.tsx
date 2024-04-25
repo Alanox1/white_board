@@ -5,10 +5,9 @@ import { create } from "@/app/actions/todoActions";
 import { TodoType } from "@/types/todoType";
 import ColorSelector from "./ColorSelector";
 
-type ChangeOpenFunction = (isOpen: boolean) => void; //PUSE ESTE LINEA DE CODIGO Y LO DE ABAJO 
+type ChangeOpenFunction = (isOpen: boolean) => void; //PUSE ESTE LINEA DE CODIGO Y LO DE ABAJO
 
-const AddTodo = ({ changeOpen } : { changeOpen: ChangeOpenFunction }) => {
-  
+const AddTodo = ({ changeOpen }: { changeOpen: ChangeOpenFunction }) => {
   const handleSubmit = () => changeOpen(false);
 
   return (
@@ -28,26 +27,11 @@ const AddTodo = ({ changeOpen } : { changeOpen: ChangeOpenFunction }) => {
           />
         </div>
         {/*  Input para agregar un mensaje, anda pero sale subrayado en rojo en page.tsx y en todoActions.tsx */}
-        <div className="flex justify-center gap-10 text-white text-xl">
-          {" "}
-          <div className="flex justify-center gap-10 m-7">
-            {/* <label>
-              <span className="inline-block  h-10 w-10 rounded-full bg-blue-500">
-                <Input type="radio" name="backgroundColor" value="blue" />
-              </span>{" "}
-            </label>
-            <label>
-              {" "}
-              <span className="inline-block h-10 w-10 rounded-full bg-yellow-500">
-                <Input type="radio" name="backgroundColor" value="yellow" />
-              </span>{" "}
-            </label>
-            <label>
-              <span className="inline-block  h-10 w-10 rounded-full bg-green-500">
-                <Input type="radio" name="backgroundColor" value="green" />
-              </span>{" "}
-            </label> */}
-            <ColorSelector initialColor="red" /> {/*  PUSE ESTE INITIALCOLOR */}
+        <div className="flex justify-center text-white text-xl">
+          <div className="label w-full text-xl text-neutral-800">
+            Your color pin:
+            <ColorSelector initialColor="red" />
+            {/*  PUSE ESTE INITIALCOLOR */}
           </div>
         </div>
         <Button type="submit" text="Add" variant="save" />
