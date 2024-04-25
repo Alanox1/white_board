@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ColorSelector() {
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState("red");
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
@@ -40,6 +40,21 @@ function ColorSelector() {
               </span>{" "}
             </label> */}
 
+      <label>
+        <span
+          className={`inline-block h-10 w-10 rounded-full bg-red-500 ${
+            selectedColor === "red" && "border-2 border-black"
+          }`}
+        >
+          <input
+            className="opacity-0 absolute"
+            type="radio"
+            name="backgroundColor"
+            value="red"
+            onChange={handleColorChange}
+          />
+        </span>{" "}
+      </label>
       <label>
         <span
           className={`inline-block h-10 w-10 rounded-full bg-blue-500 ${

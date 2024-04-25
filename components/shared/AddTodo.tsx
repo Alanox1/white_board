@@ -3,6 +3,7 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { create } from "@/app/actions/todoActions";
 import { TodoType } from "@/types/todoType";
+import ColorSelector from "./ColorSelector";
 
 const AddTodo = ({ changeOpen }) => {
   const handleSubmit = () => changeOpen(false);
@@ -27,7 +28,7 @@ const AddTodo = ({ changeOpen }) => {
         <div className="flex justify-center gap-10 text-white text-xl">
           {" "}
           <div className="flex justify-center gap-10 m-7">
-            <label>
+            {/* <label>
               <span className="inline-block  h-10 w-10 rounded-full bg-blue-500">
                 <Input type="radio" name="backgroundColor" value="blue" />
               </span>{" "}
@@ -42,7 +43,8 @@ const AddTodo = ({ changeOpen }) => {
               <span className="inline-block  h-10 w-10 rounded-full bg-green-500">
                 <Input type="radio" name="backgroundColor" value="green" />
               </span>{" "}
-            </label>
+            </label> */}
+            <ColorSelector />
           </div>
         </div>
         <Button type="submit" text="Add" variant="save" />
