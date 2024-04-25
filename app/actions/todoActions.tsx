@@ -9,7 +9,9 @@ export async function create(formData: FormData) {
   const input = formData.get("input") as string;
 
   const message = formData.get("message") as string; //Acá llega el message, pero no lo puedo poner en el prisma porque me sale error
- 
+  
+  const backgroundColor = formData.get("backgroundColor") as string;
+  
   if (!input.trim()) {
     return;
   }
@@ -18,6 +20,7 @@ export async function create(formData: FormData) {
     data: {
       title: input,
       mensaje : message,
+      backgroundColor : backgroundColor
     },
   });
 
