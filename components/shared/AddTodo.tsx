@@ -39,7 +39,7 @@ const AddTodo = ({ changeOpen }) => {
             Verde
           </label>
         </div>
-        <Button type="submit" text="Add" />
+        <Button type="submit" text="Add" variant="save" />
       </div>
     </Form>
   );

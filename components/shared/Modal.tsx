@@ -63,6 +63,10 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
+      <div className="flex">
+        <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
+        {/* Este botón antes estaba mas arriba */}
+      </div>
       <h2 className="text-3xl text-center  m-10">Note Editor</h2>
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
@@ -103,13 +107,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
             </label>
           </div>
 
-          <Button type="submit" text="Save" variant="action" />
+          <Button type="submit" text="Save" variant="save" />
         </div>
       </Form>
-      <div className="flex gap-5 mt-4">
-        <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
-        {/* Este botón antes estaba mas arriba */}
-      </div>
     </Modal>
   );
 };

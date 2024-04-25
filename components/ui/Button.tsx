@@ -7,7 +7,7 @@ interface buttonProps {
   type?: "button" | "submit" | "reset";
   text: string | ReactNode;
   onClick?: () => void;
-  variant: "action" | "color" | "default";
+  variant: "action" | "save" | "default" | "delete";
 }
 
 const Button = ({ type, text, onClick, variant = "default" }: buttonProps) => {
@@ -19,8 +19,10 @@ const Button = ({ type, text, onClick, variant = "default" }: buttonProps) => {
         className={clsx(
           variant === "default" &&
             "rounded-3xl px-3 py-3  text-black/80 hover:bg-accent  hover:text-black  border-accent",
-          variant === "action" &&
-            "hover:bg-primary/80 bg-primary p-6 flex items-stretch rounded-3xl hover:text-background"
+          variant === "save" &&
+            " bg-secondary p-3 text-center rounded-3xl hover:text-background shadow-md  hover:bg-secondary/80  text-md text-white ",
+          variant === "delete" &&
+            "hover:bg-red-600 border border-red-600 text-md text-red-600 bg-background p-3 flex  rounded-3xl hover:text-background"
         )}
       >
         {text}

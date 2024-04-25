@@ -22,7 +22,7 @@ const SideBar = () => {
 
       <div
         className={`${
-          open ? "w-1/3" : "w-0"
+          open ? "sm:w-4/6  lg:w-2/3 xl:w-1/2" : "w-0"
         } bg-background min-h-screen fixed top-0 right-0 transition-all duration-300 flex justify-center `}
       >
         <div className={`${!open && "hidden"} pt-3 flex justify-around`}>

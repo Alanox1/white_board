@@ -16,7 +16,7 @@ const DeleteTodo = ({ todo, onDelete }: { todo: TodoType }) => {
     >
       <Input type="hidden" name="inputId" value={todo.id} />
 
-      <Button variant="default" text={"Delete"} type="submit" />
+      <Button variant="delete" text={"Delete"} type="submit" />
     </Form>
   );
 };
