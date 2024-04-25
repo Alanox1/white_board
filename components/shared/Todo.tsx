@@ -15,10 +15,13 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         style={todoStyle}
       >
         <div
-          className="m-auto h-8 w-8 rounded-full shadow-lg flex "
-          style={{ backgroundColor: todo.backgroundColor || "red" }}
+          className="m-auto h-8 w-8 rounded-full shadow-2xl shadow-black"
+          style={{
+            backgroundColor: todo.backgroundColor || "red",
+            display: "inline-block",
+          }}
         ></div>
-        <span className="text-center ">
+        <span className="text-center">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
           <p>{todo.mensaje}</p>
         </span>

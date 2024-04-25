@@ -123,7 +123,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
                 />
               </span>{" "}
             </label> */}
-            <ColorSelector />
+            <ColorSelector initialColor={todo.backgroundColor} />
           </div>
 
           <Button type="submit" text="Save" variant="save" />

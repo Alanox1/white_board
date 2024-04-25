@@ -30,7 +30,7 @@ const Home = async () => {
   return (
     <div className="py-32 flex justify-center flex-col bg-background gap-12 items-center">
       <div className="flex justify-evenly w-full items-center">
-        <h1 className="text-3xl sm:text-9xl font-serif text-accent/90 p-0 m-0">
+        <h1 className="text-3xl sm:text-9xl font-serif text-black/80 p-0 m-0">
           NoteBoard
         </h1>
         {/* <AddTodo />  */}

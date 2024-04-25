@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function ColorSelector() {
-  const [selectedColor, setSelectedColor] = useState("red");
+function ColorSelector({ initialColor = "red" }: { initialColor: string }) {
+  const [selectedColor, setSelectedColor] = useState(initialColor);
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
@@ -39,6 +39,9 @@ function ColorSelector() {
                 />
               </span>{" "}
             </label> */}
+
+      {/* 
+Reemplace el codigo de arriba con el de aca abajo para hacer que funcionen los botones  */}
 
       <label>
         <span
