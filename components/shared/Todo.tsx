@@ -12,9 +12,9 @@ const Todo = ({ todo }: { todo: TodoType }) => {
   };
 
   return (
-    <div className="flex flex-col items-center" style={todoStyle}>
+    <div className="flex flex-col items-center">
       <div
-        className="p-6 bg-white min-w-80 w-80 h-80 flex flex-col justify-around "
+        className="p-6 flex flex-col justify-around shadow-2xl min-w-80 w-80 h-80 "
         style={todoStyle}
       >
         <div
@@ -24,7 +24,6 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         <span className="text-center ">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
           <p>{todo.mensaje}</p>
-          {/* <p className="">In publishing and graphic design{todo.messaje}</p> */}
         </span>
         <div className="flex justify-end gap-5 text-xl mt-10">
           <EditTodo todo={todo} />

@@ -28,7 +28,7 @@ const Home = async () => {
   const data = await getData();
 
   return (
-    <div className="w-full py-32 flex justify-center flex-col items-center">
+    <div className="w-full py-32 flex justify-center flex-col items-center bg-background">
       <div className="flex gap-6 justify-around w-full items-center">
         <h1 className="text-3xl sm:text-6xl p-0 m-0">NoteBoard</h1>
         {/* <AddTodo />  */}

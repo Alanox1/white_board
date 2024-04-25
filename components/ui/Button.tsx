@@ -17,8 +17,9 @@ const Button = ({ type, text, onClick, actionButton }: buttonProps) => {
         onClick={onClick}
         type={type}
         className={clsx(
-          actionButton && "bg-orange-700 m-auto w-full p-2 text-white",
-          "bg-pink-700 px-6 py-6 text-white"
+          " rounded-3xl px-3 py-3 text-gray-400 border ",
+          actionButton &&
+            "hover:bg-primary m-auto w-full rounded-3xl  hover:text-background"
         )}
       >
         {text}
