@@ -5,10 +5,7 @@ import EditTodo from "./EditTodo";
 import { useState } from "react";
 const Todo = ({ todo }: { todo: TodoType }) => {
   const todoStyle = {
-    textDecoration: todo.isCompleted === true ? "line-through" : "none",
-    opacity: todo.isCompleted === true ? 0.5 : 1,
-    backgroundColor: "white",
-    // backgroundColor: todo.backgroundColor || "white",
+    backgroundColor: "background",
   };
 
   return (
@@ -18,8 +15,8 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         style={todoStyle}
       >
         <div
-          className="m-auto h-8 w-8 rounded-full"
-          style={{ backgroundColor: todo.backgroundColor || "" }}
+          className="m-auto h-8 w-8 rounded-full shadow-lg flex "
+          style={{ backgroundColor: todo.backgroundColor || "red" }}
         ></div>
         <span className="text-center ">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
