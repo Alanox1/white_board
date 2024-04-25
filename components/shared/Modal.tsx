@@ -19,7 +19,7 @@ type ModalProps = {
 };
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
-  const [modalText, setModalText] = useState("");
+  const [modalText, setModalText] = useState(todo.title || "");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
     if (todo.isCompleted === true) {
@@ -65,13 +65,17 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       <h2 className="text-5xl text-center mb-4">Editar</h2>{" "}
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
-        
-        <div className="flex flex-col justify-center gap-6 ">
-          <Input type="text" name="newTitle" placeholder="EditTodo..." />
 
+        <div className="flex flex-col justify-center gap-6 ">
+          <Input
+            onChange={(e) => setModalText(e.target.value)}
+            value={modalText}
+            type="text"
+            name="newTitle"
+            placeholder="EditTodo..."
+          />
 
           <Input name="messageEdit" type="text" placeholder="Edit Message..." />
-
 
           <div className="flex justify-center gap-10">
             {" "}
@@ -88,17 +92,13 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
               Verde
             </label>
           </div>
-         
-         <Button type="submit" text="Save" />
-         
-          
-        </div>
 
+          <Button type="submit" text="Save" />
+        </div>
       </Form>
       <div className="flex gap-5 mt-4">
         {" "}
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
-     
         {/* Este botón antes estaba mas arriba */}
       </div>
     </Modal>
