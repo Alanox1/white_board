@@ -63,11 +63,11 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
-      <div className="flex">
+      <div className="flex ">
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
-        {/* Este botón antes estaba mas arriba */}
+        {/* Este botón antes estaba más arriba */}
       </div>
-      <h2 className="text-3xl text-center  m-10">Note Editor</h2>
+      <h2 className="text-3xl text-center font m-10">Note Editor</h2>
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
 
@@ -91,19 +91,22 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
             />
           </div>
 
-          <div className="flex justify-center gap-10">
-            {" "}
+          <div className="flex justify-center gap-10 m-7">
             <label>
-              <Input type="radio" name="backgroundColor" value="blue" />
-              Azul
+              <span className="inline-block h-6 w-6 rounded-full bg-blue-500">
+                <Input type="radio" name="backgroundColor" value="blue" />
+              </span>{" "}
             </label>
             <label>
-              <Input type="radio" name="backgroundColor" value="yellow" />
-              Amarillo
+              {" "}
+              <span className="inline-block h-6 w-6 rounded-full bg-yellow-500">
+                <Input type="radio" name="backgroundColor" value="yellow" />
+              </span>{" "}
             </label>
             <label>
-              <Input type="radio" name="backgroundColor" value="green" />
-              Verde
+              <span className="inline-block h-6 w-6 rounded-full bg-green-500">
+                <Input type="radio" name="backgroundColor" value="green" />
+              </span>{" "}
             </label>
           </div>
 
