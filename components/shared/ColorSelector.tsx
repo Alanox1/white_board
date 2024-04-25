@@ -9,7 +9,7 @@ function ColorSelector({ initialColor = "red" }: { initialColor: string }) {
   };
 
   return (
-    <div className="flex justify-center gap-20 my-12">
+    <div className="flex justify-center xs:gap-4 sm:gap-9 xl:gap-14 my-12">
       <label>
         <span
           className={`inline-block h-10 w-10 rounded-full bg-red-500 ${

@@ -54,7 +54,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           width: "50%",
           height: "auto",
           top: "15%",
-          left: "25%",
+          left: "35%",
           bottom: "auto",
           right: "auto",
           display: "flex",
@@ -66,45 +66,47 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
-      <div className="flex flex-row-reverse">
-        <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
-        {/* Este botón antes estaba más arriba */}
-      </div>
-      <h1 className="text-3xl text-neutral-800  my-10 font-bold">
-        Note Editor
-      </h1>
-      <Form action={edit} onSubmit={handleSubmit}>
-        <Input name="inputId" value={todo.id} type="hidden" />
-
-        <div className="flex flex-col justify-center gap-6 ">
-          <div className="label text-xl text-neutral-800">
-            Your title:
-            <Input
-              onChange={(e) => setModalTitle(e.target.value)}
-              value={modalTitle}
-              type="text"
-              name="newTitle"
-              placeholder="EditTodo..."
-            />
-          </div>
-          <div className="label text-xl text-neutral-800">
-            Your text:
-            <textarea
-              onChange={(e) => setModalMessage(e.target.value)}
-              className="h-32 w-full p-2 rounded-2xl border-2 border-gray-300"
-              value={modalMessage}
-              name="messageEdit"
-              placeholder="Edit Message..."
-            />
-          </div>
-
-          <div className="label w-full text-xl text-neutral-800">
-            Your color pin:
-            <ColorSelector initialColor={todo.backgroundColor ?? "#FFFFFF"} />
-          </div>
-          <Button type="submit" text="Save" variant="save" />
+      <div className="m-10 ">
+        <div className="flex flex-row-reverse">
+          <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
+          {/* Este botón antes estaba más arriba */}
         </div>
-      </Form>
+        <h1 className="text-3xl text-neutral-800  my-10 font-bold">
+          Note Editor
+        </h1>
+        <Form action={edit} onSubmit={handleSubmit}>
+          <Input name="inputId" value={todo.id} type="hidden" />
+
+          <div className="flex flex-col justify-center gap-6 ">
+            <div className="label text-xl text-neutral-800">
+              Your title:
+              <Input
+                onChange={(e) => setModalTitle(e.target.value)}
+                value={modalTitle}
+                type="text"
+                name="newTitle"
+                placeholder="EditTodo..."
+              />
+            </div>
+            <div className="label text-xl text-neutral-800">
+              Your text:
+              <textarea
+                onChange={(e) => setModalMessage(e.target.value)}
+                className="h-32 w-full p-2 rounded-2xl border-2 border-gray-300"
+                value={modalMessage}
+                name="messageEdit"
+                placeholder="Edit Message..."
+              />
+            </div>
+
+            <div className="label w-full text-xl text-neutral-800">
+              Your color pin:
+              <ColorSelector initialColor={todo.backgroundColor ?? "#FFFFFF"} />
+            </div>
+            <Button type="submit" text="Save" variant="save" />
+          </div>
+        </Form>
+      </div>{" "}
     </Modal>
   );
 };

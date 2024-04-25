@@ -10,11 +10,11 @@ const Todo = ({ todo }: { todo: TodoType }) => {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="p-6 flex flex-col justify-around shadow-2xl min-w-80 w-80 h-80 "
+        className="p-6 flex flex-col justify-around shadow-2xl shadow-amber-950 min-w-80 w-80 h-80 "
         style={todoStyle}
       >
         <div
-          className="m-auto h-8 w-8 rounded-full shadow-2xl shadow-black"
+          className="m-auto h-8 w-8 rounded-full shadow-2xl shadow-amber-950"
           style={{
             backgroundColor: todo.backgroundColor || "red",
             display: "inline-block",
