@@ -22,10 +22,10 @@ const SideBar = () => {
 
       <div
         className={`${
-          open ? "w-80" : "w-0"
-        } bg-background min-h-screen fixed top-0 right-0 transition-all duration-300`}
+          open ? "w-1/3" : "w-0"
+        } bg-background min-h-screen fixed top-0 right-0 transition-all duration-300 flex justify-center `}
       >
-        <div className={`${!open && "hidden"}  pt-3 flex`}>
+        <div className={`${!open && "hidden"} pt-3 flex justify-around`}>
           <AddTodo changeOpen={setOpen} />
         </div>
       </div>

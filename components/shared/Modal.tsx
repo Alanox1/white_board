@@ -47,7 +47,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     <Modal
       style={{
         content: {
-          backgroundColor: "#D3D3D3",
+          backgroundColor: "#fefefe",
           width: "50%",
           height: "auto",
           top: "15%",
@@ -63,26 +63,29 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
-      <h2 className="text-5xl text-center mb-4">Editar</h2>{" "}
+      <h2 className="text-3xl text-center  m-10">Note Editor</h2>
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
 
         <div className="flex flex-col justify-center gap-6 ">
-          <Input
-            onChange={(e) => setModalTitle(e.target.value)}
-            value={modalTitle}
-            type="text"
-            name="newTitle"
-            placeholder="EditTodo..."
-          />
-
-          <Input
-            onChange={(e) => setModalMessage(e.target.value)}
-            value={modalMessage}
-            name="messageEdit"
-            type="text"
-            placeholder="Edit Message..."
-          />
+          <div className="label ">
+            <Input
+              onChange={(e) => setModalTitle(e.target.value)}
+              value={modalTitle}
+              type="text"
+              name="newTitle"
+              placeholder="EditTodo..."
+            />
+          </div>
+          <div className="label ">
+            <textarea
+              onChange={(e) => setModalMessage(e.target.value)}
+              className="h-32 w-full p-2 rounded-2xl border-2 border-gray-300"
+              value={modalMessage}
+              name="messageEdit"
+              placeholder="Edit Message..."
+            />
+          </div>
 
           <div className="flex justify-center gap-10">
             {" "}
@@ -100,11 +103,15 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
             </label>
           </div>
 
-          <Button type="submit" text="Save" />
+          <Button
+            type="submit"
+            text="Save"
+            actionButton
+            className="text-orange-600"
+          />
         </div>
       </Form>
       <div className="flex gap-5 mt-4">
-        {" "}
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
         {/* Este botón antes estaba mas arriba */}
       </div>

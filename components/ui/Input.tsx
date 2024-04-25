@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ChangeEventHandler } from "react";
 
 interface inputProps {
@@ -6,12 +7,23 @@ interface inputProps {
   placeholder?: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
+  className?: string;
 }
-const Input = ({ name, type, placeholder, value, onChange }: inputProps) => {
+const Input = ({
+  name,
+  type,
+  placeholder,
+  value,
+  onChange,
+  className = "",
+}: inputProps) => {
   return (
     <>
       <input
-        className="w-full p-2 border border-gray-200"
+        className={clsx(
+          "w-full p-2 border-2 border-gray-300 rounded-2xl",
+          className
+        )}
         name={name}
         onChange={onChange}
         type={type}
