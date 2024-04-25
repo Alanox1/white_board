@@ -18,7 +18,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
         style={todoStyle}
       >
         <div
-          className="m-auto h-8 w-8 rounded-full "
+          className="m-auto h-8 w-8 rounded-full"
           style={{ backgroundColor: todo.backgroundColor || "" }}
         ></div>
         <span className="text-center ">
