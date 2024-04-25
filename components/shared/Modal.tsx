@@ -48,12 +48,12 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         content: {
           backgroundColor: "#D3D3D3",
           width: "50%",
-          height: "auto", //Le saque el height de 50% para que se anche a todo el contenido
-          top: "25%",
+          height: "auto",
+          top: "15%",
           left: "25%",
           bottom: "auto",
           rigth: "auto",
-          display: "flex", //Puse un flex para poder acomodarlos y abajo como los acomode
+          display: "flex",
           flexDirection: "column",
           justifyContent: "space-evenly",
         },
@@ -76,16 +76,16 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           <div className="flex justify-center gap-10">
             {" "}
             <label>
-              <input type="radio" name="backgroundColor" value="blue" />
+              <Input type="radio" name="backgroundColor" value="blue" />
               Azul
             </label>
             <label>
-              <input type="radio" name="backgroundColor" value="yellow" />
+              <Input type="radio" name="backgroundColor" value="yellow" />
               Amarillo
             </label>
             <label>
-              <input type="radio" name="backgroundColor" value="yellow" />
-              Green
+              <Input type="radio" name="backgroundColor" value="green" />
+              Verde
             </label>
           </div>
          

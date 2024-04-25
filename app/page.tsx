@@ -25,7 +25,7 @@ async function getData() {
 
   return data.map((todo) => {
     // TODO: Cambiar cuando se actualize la base de datos!!!!
-    return { ...todo, color: "red" };
+    return { ...todo, color: "red" }; //CAMBIE EL COLOR; SI QUERES CAMBIALO
   });
   
 }

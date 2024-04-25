@@ -52,8 +52,8 @@ export async function changeStatus(formData: FormData) {
 export async function edit(formData: FormData) {
   const input = formData.get("newTitle") as string;
   const inputId = formData.get("inputId") as string;
-  const messageEdit = formData.get("messageEdit") as string
-
+  const messageEdit = formData.get("messageEdit") as string;
+  const backgroundColor = formData.get("backgroundColor") as string;
 
   await prisma.todo.update({
     where: {
@@ -62,7 +62,7 @@ export async function edit(formData: FormData) {
     data: {
       title: input,
       mensaje : messageEdit,
-  
+      backgroundColor : backgroundColor
     },
   });
   revalidatePath("/");

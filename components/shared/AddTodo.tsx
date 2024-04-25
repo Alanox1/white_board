@@ -16,7 +16,7 @@ const AddTodo = ({changeOpen}) => {
 
         <Input name="message" type="text" placeholder="Add Message..."/>  {/*  Input para agregar un mensaje, anda pero sale subrayado en rojo en page.tsx y en todoActions.tsx */}
 
-        <div className="flex justify-center gap-10 text-white">
+        <div className="flex justify-center gap-10 text-white text-xl">
             {" "}
             <label>
               <Input type="radio" name="backgroundColor" value="blue" />
@@ -28,7 +28,7 @@ const AddTodo = ({changeOpen}) => {
             </label>
             <label>
               <Input type="radio" name="backgroundColor" value="green" />
-              Green
+              Verde
             </label>
           </div>
 
