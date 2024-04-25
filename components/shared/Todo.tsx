@@ -4,14 +4,13 @@ import { TodoType } from "@/types/todoType";
 import EditTodo from "./EditTodo";
 import { useState } from "react";
 const Todo = ({ todo }: { todo: TodoType }) => {
-
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
     opacity: todo.isCompleted === true ? 0.5 : 1,
-    backgroundColor : todo.backgroundColor || "white"
+    backgroundColor: "white",
+    // backgroundColor: todo.backgroundColor || "white",
   };
 
-  
   return (
     <div className="flex flex-col items-center" style={todoStyle}>
       <div
@@ -20,7 +19,7 @@ const Todo = ({ todo }: { todo: TodoType }) => {
       >
         <div
           className="m-auto h-6 w-6 rounded-full"
-          style={{ backgroundColor: todo.color || "" }}
+          style={{ backgroundColor: todo.backgroundColor || "" }}
         ></div>
         <span className="text-center ">
           <h1 className="font-bold uppercase text-2xl">{todo.title}</h1>
