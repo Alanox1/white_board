@@ -19,7 +19,8 @@ type ModalProps = {
 };
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
-  const [modalText, setModalText] = useState(todo.title || "");
+  const [modalTitle, setModalTitle] = useState(todo.title || "");
+  const [modalMessage, setModalMessage] = useState(todo.messaje || "");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
     if (todo.isCompleted === true) {
@@ -33,12 +34,12 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     closeModal(); //Agregue este closeModal para que al editar al apretar save se vaya el modal
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setModalText(e.target.value);
+    setModalTitle(e.target.value);
   };
 
   const handleSave = () => {
     // Aquí podrías procesar o guardar el texto del modal.
-    console.log("Texto guardado:", modalText);
+    // console.log("Texto guardado:", modalText);
     closeModal(); // Cerrar el modal después de guardar.
   };
 
@@ -68,14 +69,20 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
 
         <div className="flex flex-col justify-center gap-6 ">
           <Input
-            onChange={(e) => setModalText(e.target.value)}
-            value={modalText}
+            onChange={(e) => setModalTitle(e.target.value)}
+            value={modalTitle}
             type="text"
             name="newTitle"
             placeholder="EditTodo..."
           />
 
-          <Input name="messageEdit" type="text" placeholder="Edit Message..." />
+          <Input
+            onChange={(e) => setModalMessage(e.target.value)}
+            value={modalMessage}
+            name="messageEdit"
+            type="text"
+            placeholder="Edit Message..."
+          />
 
           <div className="flex justify-center gap-10">
             {" "}
