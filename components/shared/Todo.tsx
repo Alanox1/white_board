@@ -2,16 +2,22 @@
 import ChangeTodo from "./ChangeTodo";
 import { TodoType } from "@/types/todoType";
 import EditTodo from "./EditTodo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Todo = ({ todo }: { todo: TodoType }) => {
-
+   const [bgColor, setBgColor] = useState("white")
+   
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? "line-through" : "none",
     opacity: todo.isCompleted === true ? 0.5 : 1,
-    backgroundColor : todo.backgroundColor || "white"
+    // backgroundColor : todo.backgroundColor 
+    backgroundColor : todo.backgroundColor ? todo.backgroundColor : bgColor
   };
 
   
+  useEffect(() => {
+    setBgColor(todo.backgroundColor)
+  },[])
+  console.log(bgColor)
   return (
     <div className="flex flex-col items-center" style={todoStyle}>
       <div

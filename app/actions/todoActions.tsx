@@ -62,7 +62,7 @@ export async function edit(formData: FormData) {
     data: {
       title: input,
       mensaje : messageEdit,
-      backgroundColor : backgroundColor
+      backgroundColor : backgroundColor 
     },
   });
   revalidatePath("/");

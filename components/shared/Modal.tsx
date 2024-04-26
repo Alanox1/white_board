@@ -18,7 +18,7 @@ type ModalProps = {
   todo: TodoType;
 };
 
-const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
+const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo}) => {
   const [modalText, setModalText] = useState("");
   const [editTodo, setEditTodo] = useState(false);
   const hadleEdit = () => {
@@ -67,9 +67,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
         <Input name="inputId" value={todo.id} type="hidden" />
         
         <div className="flex flex-col justify-center gap-6 ">
+          {/* <Input type="text" name="newTitle" placeholder="EditTodo..." value={todo.title}/> */}
+
           <Input type="text" name="newTitle" placeholder="EditTodo..." />
-
-
           <Input name="messageEdit" type="text" placeholder="Edit Message..." />
 
 

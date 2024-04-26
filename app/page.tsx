@@ -16,7 +16,6 @@ async function getData() {
       mensaje: true,
       isCompleted: true,
       backgroundColor : true,
-
     },
     orderBy: {
       createdAt: "desc",
@@ -25,7 +24,7 @@ async function getData() {
 
   return data.map((todo) => {
     // TODO: Cambiar cuando se actualize la base de datos!!!!
-    return { ...todo, color: "red" }; //CAMBIE EL COLOR; SI QUERES CAMBIALO
+    return { ...todo, color: "red" }; 
   });
   
 }
