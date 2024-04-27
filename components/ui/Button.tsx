@@ -7,7 +7,7 @@ interface buttonProps {
   type?: "button" | "submit" | "reset";
   text: string | ReactNode;
   onClick?: () => void;
-  variant: "action" | "save" | "default" | "delete";
+  variant: "action" | "save" | "default" | "delete" | ""; //Agregue la variante ""
 }
 
 const Button = ({ type, text, onClick, variant = "default" }: buttonProps) => {

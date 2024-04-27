@@ -6,6 +6,7 @@ interface formProps {
   action: (FormData: FormData) => Promise<void | boolean>;
   className?: string;
   onSubmit?: () => void;
+  onDelete? : (param : boolean) => void;
 }
 const Form = ({ children, action, className, onSubmit }: formProps) => {
   const ref = useRef<HTMLFormElement>(null);

@@ -5,7 +5,10 @@ import { create } from "@/app/actions/todoActions";
 import { TodoType } from "@/types/todoType";
 import ColorSelector from "./ColorSelector";
 
-const AddTodo = ({ changeOpen }) => {
+type ChangeOpenFunction = (isOpen: boolean) => void; //PUSE ESTE LINEA DE CODIGO Y LO DE ABAJO 
+
+const AddTodo = ({ changeOpen } : { changeOpen: ChangeOpenFunction }) => {
+  
   const handleSubmit = () => changeOpen(false);
 
   return (
@@ -44,7 +47,7 @@ const AddTodo = ({ changeOpen }) => {
                 <Input type="radio" name="backgroundColor" value="green" />
               </span>{" "}
             </label> */}
-            <ColorSelector />
+            <ColorSelector initialColor="red" /> {/*  PUSE ESTE INITIALCOLOR */}
           </div>
         </div>
         <Button type="submit" text="Add" variant="save" />

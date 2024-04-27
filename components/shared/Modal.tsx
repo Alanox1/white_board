@@ -17,6 +17,7 @@ type ModalProps = {
   isOpen: boolean;
   closeModal: () => void;
   todo: TodoType;
+  onDelete? : () => void;
 };
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
@@ -30,7 +31,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     setEditTodo(!editTodo);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     setEditTodo(false);
     closeModal(); //Agregue este closeModal para que al editar al apretar save se vaya el modal
   };
@@ -54,7 +55,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
           top: "15%",
           left: "25%",
           bottom: "auto",
-          rigth: "auto",
+          right: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-evenly",
@@ -123,7 +124,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
                 />
               </span>{" "}
             </label> */}
-            <ColorSelector initialColor={todo.backgroundColor} />
+            <ColorSelector initialColor={todo.backgroundColor ?? "#FFFFFF"} />
           </div>
 
           <Button type="submit" text="Save" variant="save" />

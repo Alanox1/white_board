@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 function ColorSelector({ initialColor = "red" }: { initialColor: string }) {
   const [selectedColor, setSelectedColor] = useState(initialColor);
 
-  const handleColorChange = (e) => {
+  const handleColorChange = (e: ChangeEvent<HTMLInputElement>) => { //Puse este ChangEvent
     setSelectedColor(e.target.value);
   };
 

@@ -6,4 +6,6 @@ export type TodoType = {
   createdAt?: Date;
   mensaje?: string | null;
   backgroundColor?: string | null;
+  onDelete?: () => void; 
+
 };

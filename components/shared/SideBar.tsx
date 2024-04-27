@@ -4,6 +4,8 @@ import AddTodo from "./AddTodo";
 
 const SideBar = () => {
   const [open, setOpen] = useState(false);
+
+  const changeOpen = () => setOpen(false);
   return (
     <div className="bg-primary/70 hover:bg-primary text-white rounded-3xl  p-5 top-0 left-0 right-0 shadow-md">
       <button
@@ -26,7 +28,7 @@ const SideBar = () => {
         } bg-background min-h-screen fixed top-0 right-0 transition-all duration-300 flex justify-center `}
       >
         <div className={`${!open && "hidden"} pt-3 flex justify-around`}>
-          <AddTodo changeOpen={setOpen} />
+          <AddTodo changeOpen={changeOpen} />
         </div>
       </div>
     </div>

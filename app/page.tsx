@@ -4,6 +4,7 @@ import Todo from "@/components/shared/Todo";
 import { todo } from "node:test";
 import { useState, useEffect } from "react";
 import SideBar from "@/components/shared/SideBar";
+import { TodoType } from "@/types/todoType";
 
 async function getData() {
   const data = await prisma.todo.findMany({
