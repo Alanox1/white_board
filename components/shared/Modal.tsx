@@ -17,7 +17,7 @@ type ModalProps = {
   isOpen: boolean;
   closeModal: () => void;
   todo: TodoType;
-  onDelete? : () => void;
+  onDelete?: () => void;
 };
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
@@ -28,6 +28,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
     if (todo.isCompleted === true) {
       return;
     }
+
     setEditTodo(!editTodo);
   };
 
@@ -65,16 +66,19 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       onRequestClose={closeModal}
       contentLabel="Ejemplo de Modal"
     >
-      <div className="flex ">
+      <div className="flex flex-row-reverse">
         <DeleteTodo todo={todo} onDelete={closeModal} />{" "}
         {/* Este botón antes estaba más arriba */}
       </div>
-      <h2 className="text-3xl text-center font m-10">Note Editor</h2>
+      <h1 className="text-3xl text-neutral-800  my-10 font-bold">
+        Note Editor
+      </h1>
       <Form action={edit} onSubmit={handleSubmit}>
         <Input name="inputId" value={todo.id} type="hidden" />
 
         <div className="flex flex-col justify-center gap-6 ">
-          <div className="label ">
+          <div className="label text-xl text-neutral-800">
+            Your title:
             <Input
               onChange={(e) => setModalTitle(e.target.value)}
               value={modalTitle}
@@ -83,7 +87,8 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
               placeholder="EditTodo..."
             />
           </div>
-          <div className="label ">
+          <div className="label text-xl text-neutral-800">
+            Your text:
             <textarea
               onChange={(e) => setModalMessage(e.target.value)}
               className="h-32 w-full p-2 rounded-2xl border-2 border-gray-300"
@@ -93,40 +98,10 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
             />
           </div>
 
-          <div className="flex justify-center gap-10 m-7">
-            {/* <label>
-              <span className="inline-block h-10 w-10 rounded-full bg-blue-500 ">
-                <Input
-                  type="radio"
-                  name="backgroundColor"
-                  value="blue"
-                  className="opacity-0 absolute"
-                />
-              </span>{" "}
-            </label>
-            <label>
-              <span className="inline-block h-10 w-10 rounded-full bg-yellow-500">
-                <Input
-                  type="radio"
-                  name="backgroundColor"
-                  value="yellow"
-                  className="opacity-0 absolute"
-                />
-              </span>{" "}
-            </label>
-            <label>
-              <span className="inline-block h-10 w-10 rounded-full bg-green-500 ">
-                <Input
-                  type="radio"
-                  name="backgroundColor"
-                  value="green"
-                  className="opacity-0 absolute"
-                />
-              </span>{" "}
-            </label> */}
+          <div className="label w-full text-xl text-neutral-800">
+            Your color pin:
             <ColorSelector initialColor={todo.backgroundColor ?? "#FFFFFF"} />
           </div>
-
           <Button type="submit" text="Save" variant="save" />
         </div>
       </Form>
