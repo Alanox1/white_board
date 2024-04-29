@@ -51,15 +51,16 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, closeModal, todo }) => {
       style={{
         content: {
           backgroundColor: "#fefefe",
-          width: "50%",
-          height: "auto",
-          top: "15%",
-          left: "25%",
-          bottom: "auto",
-          right: "auto",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-evenly",
+          top                   : '50%',
+          left                  : '50%',
+          right                 : 'auto',
+          bottom                : 'auto',
+          marginRight           : '-50%',
+          transform             : 'translate(-50%, -50%)',
+          // display: "flex",
+          // flexDirection: "column",
+          // justifyContent: "space-evenly",
+         
         },
       }}
       isOpen={isOpen}
